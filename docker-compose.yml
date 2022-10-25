@@ -1,0 +1,46 @@
+version: '2'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    ports:
+      - '3307:3306'
+    volumes:
+      - 'db:/var/lib/mysql'
+    environment:
+      - MYSQL_ROOT_PASSWORD=pass4Quick0n
+      - MYSQL_DATABASE=alist
+    networks:
+      - net
+
+  alist:
+    image: hub.qucheng.com/app/alist:${TAG:-latest}
+    container_name: alist
+    ports:
+      - '8080:80'
+    volumes:
+      - 'data:/data'
+    depends_on:
+      - mysql
+    environment:
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=pass4Quick0n
+      - MYSQL_DB=alist
+      - DEBUG=1
+      - IS_CONTAINER=true
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge
+
+# persistence
+volumes:
+  db:
+    driver: local
+  data:
+    driver: local

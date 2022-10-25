@@ -1,0 +1,17 @@
+{
+    "Name": "AList",
+    "Version": "1.0.0",
+    "Home": "https://alist.nn.ci/",
+    "Maintainer": "liyang liyang@easycorp.ltd",
+    "GitUrl": "https://github.com/alist-org/alist",
+    "DockerfileUrl": "https://github.com/quicklyon/alist-docker",
+    "DockerfileRepoBranch":"master",
+    "InstallDocUrl": "https://www.qucheng.com/app-install/alist-install-<number>.html",
+    "Docker": {
+        "Name": "alist",
+        "OS": "debian",
+        "ImageOS": "",
+        "Repo": "https://hub.docker.com/r/easysoft/alist",
+        "TagUrl": "https://hub.docker.com/r/easysoft/alist/tags/"
+    }
+}
