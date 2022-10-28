@@ -3,8 +3,8 @@
 
 APP_NAME=$1
 ACTION=$2
-SUCCESS_STRING="ZincSearch"
-SERVICE_PORT=8080
+SUCCESS_STRING="AList"
+SERVICE_PORT=5244
 
 . debian/prebuildfs/opt/easysoft/scripts/liblog.sh
 

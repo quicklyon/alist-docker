@@ -14,15 +14,8 @@ set -o pipefail
 
 print_welcome_page
 
-# Enable apache
-ln -s /etc/s6/s6-available/apache /etc/s6/s6-enable/01-apache
-
 if [ $# -gt 0 ]; then
     exec "$@"
 else
-    # Init service
-    /etc/s6/s6-init/run || exit 1
-
-    # Start s6 to manage service
-    exec /usr/bin/s6-svscan /etc/s6/s6-enable
+    /apps/alist/alist server --no-prefix
 fi
