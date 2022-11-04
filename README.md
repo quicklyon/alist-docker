@@ -19,40 +19,32 @@
 
 <!-- 这里写应用的【介绍信息】 -->
 
-<!-- 示例：
-
-[Spug](https://spug.cc/) 面向中小型企业设计的轻量级无 Agent 的自动化运维平台，整合了主机管理、主机批量执行、主机在线终端、文件在线上传下载、应用发布部署、在线任务计划、配置中心、监控、报警等一系列功能。
-
--->
-
-![screenshots](https://raw.githubusercontent.com/quicklyon/alist-docker/master/.template/screenshot.png)
+[Alist](https://alist.nn.ci/zh/) 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。
+  
+![screenshots](https://raw.githubusercontent.com/quicklyon/alist-docker/main/.template/alist_screenshots.png)
 
 AList官网：[https://alist.nn.ci/](https://alist.nn.ci/)
 
 <!-- 这里写应用的【附加信息】 -->
 
-<!-- 示例
-
 ### 1.1 特性
 
-- 批量执行: 主机命令在线批量执行
-- 在线终端: 主机支持浏览器在线终端登录
-- 文件管理: 主机文件在线上传下载
-- 任务计划: 灵活的在线任务计划
-- 发布部署: 支持自定义发布部署流程
-- 配置中心: 支持 KV、文本、json 等格式的配置
-- 监控中心: 支持站点、端口、进程、自定义等监控
-- 报警中心: 支持短信、邮件、钉钉、微信等报警方式
-- 优雅美观: 基于 Ant Design 的 UI 界面
-- 开源免费: 前后端代码完全开源
-
--->
+- 使用简单: AList 从一开始就设计为易于安装，并且可以在所有平台上使用
+- 使用简单: AList 支持多个存储提供商，包括本地存储、阿里云盘、OneDrive、Google Drive 等，且易于拓展
+- 支持 WebDAV: AList 支持所有 WebDAV 存储，这是一种用于访问文件的标准
+- 黑暗模式: 自由切换明暗模式
+- 受保护的路由: 为特定路径添加密码保护和身份验证
+- 文件预览: 支持视频、音频、文档、PDF、图片预览等，甚至支持 ipa 安装
+- 打包下载: 使用浏览器的 stream api 支持打包下载，无需使用服务器
+- 更多新功能: 包括文本编辑器、README/HTML 渲染、文件永久链接、Cloudflare Workers 代理等
 
 ## 二、支持的版本(Tag)
 
 由于版本比较多,这里只列出最新的5个版本,更详细的版本列表请参考:[可用版本列表](https://hub.docker.com/r/easysoft/alist/tags/)
 
 <!-- 这里是镜像的【Tag】信息，通过命令维护，详情参考：https://github.com/quicklyon/template-toolkit -->
+- [latest](https://github.com/alist-org/alist/releases)
+- [3.3.0-20221104](https://github.com/alist-org/alist/releases/tag/v3.3.0)
 
 ## 三、获取镜像
 
@@ -99,22 +91,13 @@ services:
 
 <!-- 这里写应用的【环境变量信息】 -->
 
-<!-- 示例：
 
-| 变量名           | 默认值        | 说明                             |
-| ---------------- | ------------- | -------------------------------- |
-| EASYSOFT_DEBUG   | false         | 是否打开调试信息，默认关闭       |
-| MYSQL_HOST       | 127.0.0.1     | MySQL 主机地址                   |
-| MYSQL_PORT       | 3306          | MySQL 端口                       |
-| MYSQL_DB         | spug          | spug 数据库名称                 |
-| MYSQL_USER       | root          | MySQL 用户名                      |
-| MYSQL_PASSWORD   | pass4Spug     | MySQL 密码                        |
-| REDIS_HOST       | 127.0.0.1     | Redis 服务地址 |
-| REDIS_PORT       | 6379          | Redis 端口 |
-| DEFAULT_ADMIN_USER| admin        | 默认管理员名称             |
-| DEFAULT_ADMIN_PASSWORD | spug.dev | 默认管理员密码 |
-
--->
+| 变量名               | 默认值        | 说明           |
+| -------------------- | ------------- | -------------- |
+| OS_ARCH              | amd64         | 系统处理器     |
+| OS_NAME              | debian-11     | 系统名称       |
+| HOME_PAGE            | alist.nn.ci   | 应用主页       |
+| ALIST_ADMIN_PASSWORD | qucheng123    | 默认管理员密码 |
 
 ## 六、运行
 
@@ -133,12 +116,10 @@ docker-compose logs -f alist
 ```
 
 <!-- 这里写应用的【make命令的备注信息】位于文档最后端 -->
-<!-- 示例
 **说明:**
 
-- 启动成功后，打开浏览器输入 `http://<你的IP>:8080` 访问管理后台
-- 默认用户名：`admin`，默认密码：`spug.dev`
--->
+- 启动成功后，打开浏览器输入 `http://<你的IP>:5244` 访问管理后台
+- 默认用户名：`admin`，默认密码：`qucheng123`
 - [VERSION](https://github.com/quicklyon/alist-docker/blob/master/VERSION) 文件中详细的定义了Makefile可以操作的版本
 - [docker-compose.yml](https://github.com/quicklyon/alist-docker/blob/master/docker-compose.yml)
 

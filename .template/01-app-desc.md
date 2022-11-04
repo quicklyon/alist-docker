@@ -1,7 +1,5 @@
 <!-- 这里写应用的【介绍信息】 -->
 
-<!-- 示例：
-
-[Spug](https://spug.cc/) 面向中小型企业设计的轻量级无 Agent 的自动化运维平台，整合了主机管理、主机批量执行、主机在线终端、文件在线上传下载、应用发布部署、在线任务计划、配置中心、监控、报警等一系列功能。
-
--->
+[Alist](https://alist.nn.ci/zh/) 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。
+  
+![screenshots](https://raw.githubusercontent.com/quicklyon/alist-docker/main/.template/alist_screenshots.png)
