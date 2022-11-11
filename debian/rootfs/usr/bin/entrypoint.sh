@@ -17,5 +17,7 @@ print_welcome_page
 if [ $# -gt 0 ]; then
     exec "$@"
 else
+    ALIST_ADMIN_PASSWORD=${DEFAULT_ADMIN_PASSWORD:-qucheng123}
+
     /apps/alist/alist server --no-prefix
 fi

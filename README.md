@@ -44,7 +44,7 @@ AList官网：[https://alist.nn.ci/](https://alist.nn.ci/)
 
 <!-- 这里是镜像的【Tag】信息，通过命令维护，详情参考：https://github.com/quicklyon/template-toolkit -->
 - [latest](https://github.com/alist-org/alist/releases)
-- [3.3.0-20221104](https://github.com/alist-org/alist/releases/tag/v3.3.0)
+- [3.3.0-20221107](https://github.com/alist-org/alist/releases/tag/v3.3.0)
 
 ## 三、获取镜像
 
@@ -66,13 +66,13 @@ docker pull easysoft/alist:[TAG]
 
 为了数据持久化，你应该挂载持久化目录：
 
-- /data 持久化数据
+- /apps/alist/data/ 持久化数据
 
 如果挂载的目录为空，首次启动会自动初始化相关文件
 
 ```bash
 $ docker run -it \
-    -v $PWD/data:/data \
+    -v $PWD/data:/apps/alist/data/ \
 docker pull easysoft/alist:latest
 ```
 
@@ -83,7 +83,7 @@ services:
   AList:
   ...
     volumes:
-      - /path/to/persistence:/data
+      - /path/to/persistence:/apps/alist/data/
   ...
 ```
 
@@ -94,9 +94,6 @@ services:
 
 | 变量名               | 默认值        | 说明           |
 | -------------------- | ------------- | -------------- |
-| OS_ARCH              | amd64         | 系统处理器     |
-| OS_NAME              | debian-11     | 系统名称       |
-| HOME_PAGE            | alist.nn.ci   | 应用主页       |
 | ALIST_ADMIN_PASSWORD | qucheng123    | 默认管理员密码 |
 
 ## 六、运行

@@ -49,13 +49,13 @@ docker pull easysoft/{{APP_DOCKER_IMAGE_NAME}}:[TAG]
 
 为了数据持久化，你应该挂载持久化目录：
 
-- /data 持久化数据
+- /apps/alist/data/ 持久化数据
 
 如果挂载的目录为空，首次启动会自动初始化相关文件
 
 ```bash
 $ docker run -it \
-    -v $PWD/data:/data \
+    -v $PWD/data:/apps/alist/data/ \
 docker pull easysoft/{{APP_DOCKER_IMAGE_NAME}}:latest
 ```
 
@@ -66,7 +66,7 @@ services:
   {{APP_NAME}}:
   ...
     volumes:
-      - /path/to/persistence:/data
+      - /path/to/persistence:/apps/alist/data/
   ...
 ```
 
